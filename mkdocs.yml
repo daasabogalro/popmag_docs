@@ -1,0 +1,46 @@
+site_name: PopMAG Docs
+site_description: Population genomics analyses from metagenome-assembled genomes
+site_url: https://github.com/daasabogalro/popmag
+
+theme:
+  logo: img/Logo_Holobiont.png
+  name: material
+  palette:
+    - media: (prefers-color-scheme)
+      toggle:
+        icon: material/lightbulb-auto
+        name: Switch to light mode
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to system preference
+  features:
+    - content.code.copy
+    - content.code.select
+nav:
+- Overview: 'index.md'
+- Getting started: 'started.md'
+- Usage: 'usage.md'
+- Configuration: 'config.md'
+- Visualization and output: 'visualization.md'
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
