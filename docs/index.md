@@ -2,13 +2,13 @@
 
 ---
 
-**Documentation**: <a href="https://popmag.readthedocs.io/en/latest/" target="_blank">https://popmag.readthedocs.io/en/latest/</a>
+**Documentation**: <a href="https://daasabogalro.github.io/popmag_docs/" target="_blank">https://daasabogalro.github.io/popmag_docs/</a>
 
 **Source Code**: <a href="https://github.com/daasabogalro/popmag" target="_blank">https://github.com/daasabogalro/popmag</a>
 
 ---
 
-**PopMAG** is a pipeline that integrates genome-resolved metagenomics data with population genomics tools to analyze metagenome-assembled genomes (MAGs) and their population-level variations. The pipeline processes MAGs alongside paired-end sequencing short reads (or BAM files) to perform quality assessment, abundance profiling, variant calling, and population genomics analyses, ending in an interactive visualization dashboard built with shiny.
+**PopMAG** is a pipeline that integrates genome-resolved metagenomics data with population genomics tools to analyze metagenome-assembled genomes (MAGs) and their population-level variations. The pipeline processes MAGs alongside paired-end sequencing short reads to perform quality assessment, abundance profiling, variant calling, and population genomics analyses, ending in an interactive visualization dashboard built with shiny.
 
 The pipeline is organized into five main phases:
 
@@ -28,8 +28,8 @@ The pipeline is organized into five main phases:
 First, you will need to prepare the samplesheets with your input data. You need to provide **PopMAG** with three files:
 
 *   A MAGs samplesheet.
-*   A reads (or BAM files) samplesheet.
-*   A metadata file (optional).
+*   A reads samplesheet.
+*   A metadata file.
 
 You can build each one of them following the `preparing input data` section. 
 
