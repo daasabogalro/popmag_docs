@@ -3,7 +3,6 @@ site_description: Population genomics analyses from metagenome-assembled genomes
 site_url: https://github.com/daasabogalro/popmag
 
 theme:
-  logo: img/Logo_Holobiont.png
   name: material
   palette:
     - media: (prefers-color-scheme)
@@ -27,6 +26,10 @@ theme:
   features:
     - content.code.copy
     - content.code.select
+
+  logo: img/Logo_Holobiont.png
+  favicon: img/Logo_Holobiont.png
+
 nav:
 - Overview: 'index.md'
 - Getting started: 'started.md'
