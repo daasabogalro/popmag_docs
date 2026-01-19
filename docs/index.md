@@ -10,55 +10,57 @@
 
 **PopMAG** is a pipeline that integrates genome-resolved metagenomics data with population genomics tools to analyze metagenome-assembled genomes (MAGs) and their population-level variations. The pipeline processes MAGs alongside paired-end sequencing short reads to perform quality assessment, abundance profiling, variant calling, and population genomics analyses, ending in an interactive visualization dashboard built with shiny.
 
-The pipeline is organized into five main phases:
-
-*    MAG Quality control and preprocessing.
-*    Microbial community profiling.
-*    Abundance calculation and variant calling.
-*    Population genomics and functional analysis.
-*    Visualization and reporting. 
-
-**PopMAG** can aid to understand both the functional potential and population dynamics of metagenome-assembled genomes, particularly in the context of comparative genomics and temporal or spatial studies.
+PopMAG can aid to understand both the functional potential and population dynamics of metagenome-assembled genomes, particularly in the context of comparative genomics and temporal or spatial studies.
 
 !!! info
     This project is under active development.
 
-## Quick start
+## Pipeline Phases
 
-First, you will need to prepare the samplesheets with your input data. You need to provide **PopMAG** with three files:
+The pipeline is organized into **five main phases**:
 
-*   A MAGs samplesheet.
-*   A reads samplesheet.
-*   A metadata file.
+![Wokflow](img/popmag.webp)
 
-You can build each one of them following the `preparing input data` section. 
+### Phase Descriptions
 
-??? note "About the command `nextflow run daasabogalro/popmag`"
+| Phase                      | Description                                                                       | Key Tools                       |
+| -------------------------- | --------------------------------------------------------------------------------- | ------------------------------- |
+| **1. Quality Control**     | Assess MAG quality, filter by completeness/contamination, and dereplicate genomes | CheckM2, dRep                   |
+| **2. Profiling**           | Profile microbial communities and calculate genome abundances                     | SingleM, CoverM                 |
+| **3. Variant Calling**     | Align reads to MAGs and identify single nucleotide variants                       | Bowtie2, InStrain               |
+| **4. Population Genomics** | Predict genes, annotate functions, and calculate population genetics metrics      | Prodigal, MetaCerberus, POGENOM |
+| **5. Visualization**       | Interactive exploration of results through a Shiny dashboard                      | R Shiny                         |
 
-    The command `nextflow run` access the repository `daasabogalro/popmag` from github, detects the `main.nf` file in it, and executes the pipeline a using <a href="https://www.docker.com" class="external-link" target="_blank">Docker</a>, which is the default execution profile.
+## Key Features
 
-    You can read more about it in the <a href="https://www.nextflow.io/docs/latest/sharing.html" target="_blank">Nextflow documentation</a>.
+- **End-to-end analysis**: From MAGs and metagenomic sequencing reads to population genetics metrics
+- **Quality filtering**: Automated filtering based on **CheckM2** completeness and contamination scores
+- **Genome dereplication**: Remove redundant genomes using **dRep**
+- **Variant detection**: Identify SNVs at the population level with **InStrain**
+- **Functional annotation**: Annotate genes with **MetaCerberus** using multiple databases
+- **Population metrics**: Calculate FST with **POGENOM** and other population genetics statistics with **InStrain**
+- **Interactive visualization**: Explore results through an integrated **Shiny dashboard**
+- **Scalable**: Built on **Nextflow** for seamless execution on local machines, clusters, or cloud
 
+## Quick Start
 
-``` nextflow
-nextflow run daasabogalro/popmag \
+Prepare your input samplesheets and run:
+
+```bash
+nextflow run daasabogalro/PopMAG \
     -profile docker \
-    --mag_paths mags_samplesheet.csv \
-    --reads_paths reads_samplesheet.csv \
-    --metadata metadata.csv \ 
+    --mag_paths mags_samplesheet.tsv \
+    --reads_paths reads_samplesheet.tsv \
+    --metadata metadata.csv \
     --outdir results
 ```
 
-The most important command for this program to run is `nextflow run daasabogalro/popmag -profile docker`
+See the [Getting Started](started.md) guide for detailed installation instructions and the [Usage](usage.md) page for samplesheet preparation.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Credits
 
-## Project layout
+PopMAG was developed by [Daniel Sabogal](https://github.com/daasabogalro) at the [Max Planck Tandem Group in Holobiont Research](https://holobionts.xyz), Universidad Nacional de Colombia.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## License
+
+PopMAG is released under the MIT License. See the [LICENSE](https://github.com/daasabogalro/PopMAG/blob/main/LICENSE) file for details.
