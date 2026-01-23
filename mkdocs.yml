@@ -1,6 +1,14 @@
 site_name: PopMAG Docs
-site_description: Population genomics analyses from metagenome-assembled genomes
-site_url: https://github.com/daasabogalro/popmag
+site_url: https://daasabogalro.github.io/popmag_docs/
+site_author: Daniel Antonio Sabogal
+site_description: "PopMAG: A Nextflow pipeline for population genomics analyses from metagenome-assembled genomes."
+
+#Repository
+repo_url: https://github.com/daasabogalro/PopMAG
+repo_name: daasabogalro/PopMAG
+
+#Copyright
+copyright: Copyright &copy; 2026 Daniel Sabogal-Rodriguez - <a href="https://holobionts.xyz">Max Planck Tandem Group in Holobiont Research</a>
 
 theme:
   name: material
@@ -26,24 +34,53 @@ theme:
   features:
     - content.code.copy
     - content.code.select
+    - content.tabs.link
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - toc.follow
 
   logo: img/Logo_Holobiont.png
   favicon: img/Logo_Holobiont.png
+  icon:
+    repo: fontawesome/brands/github
 
 nav:
-- Overview: 'index.md'
-- Getting started: 'started.md'
-- Usage: 'usage.md'
-- Configuration: 'config.md'
-- Visualization and output: 'visualization.md'
+  - Home: index.md
+  - Getting Started: started.md
+  - Usage: usage.md
+  - Configuration: config.md
+  - Visualization & Output: visualization.md
+
+plugins:
+  - search
 
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/daasabogalro/PopMAG
+      name: PopMAG on GitHub
