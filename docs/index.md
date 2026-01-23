@@ -59,7 +59,7 @@ See the [Getting Started](started.md) guide for detailed installation instructio
 
 ## Credits
 
-PopMAG was developed by [Daniel Sabogal](https://github.com/daasabogalro) at the [Max Planck Tandem Group in Holobiont Research](https://holobionts.xyz), Universidad Nacional de Colombia.
+PopMAG was developed by [Daniel Sabogal](https://github.com/daasabogalro) under the supervision of [Alejandro Caro-Quintero](https://holobionts.xyz/team/#prof-alejando-caro-quintero) at the [Max Planck Tandem Group in Holobiont Research](https://holobionts.xyz), Universidad Nacional de Colombia.
 
 ## License
 
