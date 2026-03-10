@@ -73,6 +73,7 @@ Parameters for the Shiny dashboard.
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `--shiny_timeout` | integer | `1500` | Timeout in seconds for the Shiny app. The app will automatically close after this duration. |
+| `--skip_shiny` | boolean | `false` | Skip running the Shiny App. |
 
 ## Resource Configuration
 

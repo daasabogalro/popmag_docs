@@ -137,6 +137,7 @@ max_contamination: 5
 # Skip optional steps
 skip_metacerberus: false
 skip_instrain_compare: false
+skip_shiny: false
 ```
 
 Then run with:

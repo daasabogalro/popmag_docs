@@ -221,9 +221,19 @@ If you are working in a remote server you might need to create an ssh tunnel usi
 ssh -NfL 3838:localhost:3838 username@server-ip
 ```
 
+If you ran PopMAG with `--skip_shiny` you can visualize results locally using the files available in the merged_reports folder:
+
+```bash
+docker run -p 3838:3838 \
+  -v /path/to/popmag/results/merged_reports/:/srv/shiny-server/app \
+  daasabogalro/popmag_shiny
+```
+
+Then open http://localhost:3838 in your browser.
+
 !!! warning "Timeout"
     The dashboard has a default timeout of 1500 seconds (25 minutes). Adjust with `--shiny_timeout` if you need more time.
 
-### Dashboard Features
+<!-- ### Dashboard Features
 
-#### Metadata tab
+#### Metadata tab -->
